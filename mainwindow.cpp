@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include <QDateTime>
-#include <cstdlib>
-#include <ctime>
+#include <random>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -20,9 +19,6 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Create status bar
     statusBar()->showMessage("Ready");
-
-    // Seed random number generator
-    std::srand(static_cast<unsigned int>(std::time(nullptr)));
 }
 
 MainWindow::~MainWindow() {}
@@ -117,7 +113,10 @@ void MainWindow::showPreferences()
 
 void MainWindow::generateRandomNumber()
 {
-    int randomNum = std::rand() % 1000 + 1;
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_int_distribution<> distrib(1, 1000);
+    int randomNum = distrib(gen);
     QString message = QString("Random Number: %1").arg(randomNum);
     centralLabel->setText(message);
     statusBar()->showMessage(message, 3000);
