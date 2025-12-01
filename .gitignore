@@ -10,6 +10,7 @@ moc_*.h
 *.qm
 *.qrc.cpp
 .qmake.stash
+Makefile
 
 # Qt Creator files
 *.pro.user
@@ -18,6 +19,9 @@ moc_*.h
 # IDE specific files
 .idea/
 *.autosave
+
+# CodeQL artifacts
+_codeql_detected_source_root
 
 # Compiled binaries
 DesignWindow
