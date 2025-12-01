@@ -1,0 +1,23 @@
+# Build directories
+build/
+build_test/
+
+# Qt generated files
+*.o
+*.moc
+moc_*.cpp
+moc_*.h
+*.qm
+*.qrc.cpp
+.qmake.stash
+
+# Qt Creator files
+*.pro.user
+*.pro.user.*
+
+# IDE specific files
+.idea/
+*.autosave
+
+# Compiled binaries
+DesignWindow
